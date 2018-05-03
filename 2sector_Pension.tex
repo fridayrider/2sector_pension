@@ -1,0 +1,423 @@
+\documentclass[12pt,a4paper]{jsarticle}
+\pagestyle{plain}
+
+
+%%%%%%    TEXT START    %%%%%%
+\usepackage{amsmath}	% required for `\align' (yatex added)
+\begin{document}
+　生産側は２部門生産２生産要素モデルを考える．消費者側は２期間世代重複モデルを考え，単純化のため効用関数は対数線形型である．
+
+以下の構成は，１章企業行動，２章家計行動，３章政府行動，４章均衡条件，５章安定性条件，６章比較静学である\footnote{AppnedixはCremersを参照するに行った計算を自分のために残したものなの参照しないでください．}
+
+得られた主な結果は
+\begin{itemize}
+ \item 年金規模が小さいという条件付きで，ワルラス安定条件が成立する．（~(\ref{eq:22})式前後で議論してます）
+ \item 追加的な条件で鞍点安定性が保証される．（~(\ref{eq:21})の成立は年金制度の導入にかかわらず，一般的に２部門モデル世代重複モデルで必要な条件だと私は理解しています．脚注~\ref{fn:1}でも少し説明しています）
+ \item 均衡が鞍点安定あれば，人口減少の年金受取額に対する間接効果は，Fanti and Gori (2012)と同じように，負となる．
+\end{itemize}
+
+\section{企業}
+この経済には企業が２部門存在し，それぞれ消費財と（消費には使われない）投資財を生産している．使われる生産要素は労働サービスと資本である．
+各生産部門に属する代表的企業の生産関数を以下のように定義する．
+\begin{align}
+ Y_{Ct} &= f_{C}(k_{Ct}) L_{Ct}  \\
+ Y_{It} &= f_{I}(k_{It}) L_{It}
+\end{align}
+$C$($I$)は消費財（投資財）部門を示すindexで，$k_{it}, \, L_{it}, (i=C, \, I)$はそれぞれ$i$部門で利用されている１労働量当たりの資本と，労働量である．生産関数は通常の新古典派生産関数の条件を満たしている．誤解の恐れがない限り，以下では時間に関する添え字は省略する．
+%
+%\begin{align}
+% Y_{C} = A\left(K_{c}\right)^{\alpha}\left(L_{C}\right)^{1-\alpha}  \\
+% Y_{I} = B \left(K_{I}\right)^{\beta}\left(L_{I}\right)^{1-\beta}
+% \end{align}
+%とコブ＝ダグラス型生産関数を想定する．添え字の$I, \, C$はそれぞれ投資財部門，消費財部門を表している．
+
+各期の労働市場及び資本市場均衡は
+\begin{align}
+ l_{C} +  l_{I} =1 \\
+ l_{C} k_{C}+  l_{I} k_{I}= k
+\end{align}
+と書ける．ただし，$l_{i} \equiv L_{it}/L_{t},  (i = C,I), k \equiv K_{t}/L_{t}$で，$K_{t}$は$t$期の資本量，$L_{t}$は$t$期の労働人口である．\footnote{
+後から述べるように若年層しか働かないので$L_{t}$は$t$世代の人口でもある．
+}ここから，各部門への労働投入比率
+\begin{align}
+ l_{C} = \frac{k-k_{I}}{k_{C}-k_{I}}, \,  l_{I} = \frac{k-k_{C}}{k_{I}-k_{C}}
+\end{align}
+と表される．消費財を基準財とし$p$を投資財価格とすると，利潤最大化問題の一階条件から
+\begin{align}
+ w &= f_{C} - k_{C} f_{C}^{\prime} = p \left[f_{I} - k_{I} f_{I}^{\prime} \right] \\
+r &= f_{C}^{\prime} =  p f_{I}^{\prime}
+\end{align}
+$w$，$r$はそれぞれ消費財単位の賃金率と利子率である．ここで，$\omega \equiv w/r$と定義すれば標準的な２部門モデルの特性として
+\begin{align}
+ k_{i} =\tilde{k_{i}}(\omega), \, r =r(\omega), \, w = w(\omega) \label{eq:17}
+\end{align}
+という関係が得られる．以下では，$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$，つまり投資財産業が資本集約的であると仮定する．\footnote{以下で定式化しますが，効用関数は対数線形効用関数なので，年金制度のない単純な２部門モデルであれば，貯蓄関数は利子率に依存せず，一元の動学方程式で記述されます．このような単純な設定でも，$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$だけでは安定性は保証されないようです（Galor (1992)の6章特にfootnote26を参照）．}
+さらに，$\omega$が$p$の関数であることも示せるので，
+\begin{align}
+  k_{i} =\tilde{k_{i}}(\omega(p)), \, r =r(p), \, w = w(p)
+\end{align}
+と表現する．投資財産業が資本集約的であるという仮定からストルパー＝サミュエルソン関係
+\begin{align}
+ dw/dp <0, dr/dp>0 \label{eq:7}
+\end{align}
+が得られる．\footnote{簡単に証明を書く必要があるかも知れませんが，よく知られている結果なので省略します．}また，各産業の労働者（若年者）１人当たり生産は
+\begin{align}
+ x_{C} = \tilde{ x_{C}}(p, k) = l_{c}f_{C}(k_{C}) = \frac{k-k_{I}}{k_{C}-k_{I}} f_{C}(\tilde{k_{C}}(\omega(p))  \label{eq:11}\\
+x_{I} = \tilde{ x_{I}}(p, k) = l_{I}f_{I}(k_{I}) = \frac{k -k_{C}}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p)) \label{eq:12}
+\end{align}
+と表現される．ここから
+\begin{align}
+  \partial \tilde{x_{I}}/ \partial p &>0 \label{eq:24}\\
+\partial \tilde{x_{I}}/ \partial k &= \frac{1}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p))>0 \label{eq:25}
+\end{align}
+という関係が求められる．\footnote{~(\ref{eq:24})は~(\ref{eq:8})によって示されているのですが，Appendix以降はCremersを参照する前に計算したものなので，記号表記が全く異なっています．後できちんと統一する予定ですが，直観的にも納得しやすい「ある財の価格が上昇したらその財の生産が増えるという」という内容です．$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$なので~(\ref{eq:25})は~(\ref{eq:12})から求められます．}
+
+
+
+%企業行動を費用最小化として定義する．$r$は消費財単位の資本のレンタル費用，$w$は消費財単位の労働賃金である．
+%\begin{align}
+%	\min_{K_{i}, L_{i}} r K_{i} + w L_{i} \, \mbox{s.t.} F(K_{i}, L_{i})=\bar{Y}_{i} 
+%\end{align}
+%この問題を解けば各産業$i$への最適要素投入ベクトル$a_{i}$が$(a_{Ki}(r, w), \, a_{Li}(r, w))$と求まる．したがって，各産業の費用関数
+%\begin{align}
+% c_{i}  = c_{i}(r, w)   (i=C, I)
+%\end{align}
+%一方，完全競争の仮定から，各産業の利潤は0．したがって，
+%\begin{align}
+%r a_{KC}(r, w) + w a_{LC}(r, w)   =1 \label{eq:1}\\
+%r a_{KI}(r, w)   + w a_{LI}(r, w)   = p_{I} \label{eq:2}
+%\end{align}
+%が成立．
+%ここで消費財を基準財とし，投資財の相対価格を$p{_I}$と表している．この２本の式から
+%\begin{align}
+% r = r(p_{I}), \, w = w(p_{I})
+%\end{align}
+%と要素価格が相対価格の関数になることが分かる．
+
+
+
+
+
+\section{家計}
+２期間世代重複モデルを考える．人口は毎期$n>1$の率で外生的に増加する．したがって，$t$期に生まれた世代の人口を$L_{t}$とすれば，$L_{t} = nL_{t-1}$が成立する．効用関数は対数線形効用関数を考える．
+\begin{align}
+ \log c_{1t} + \beta \log c_{2 t+1}
+\end{align}
+ここで，$c_{1 t}, \, c_{2 t+1}$はそれぞれ$t$期に生まれた世代の若年期と老年期の消費量である．
+予算制約式は
+\begin{align}
+ c_{1 t} + s_{t} +qnw_{t} = w_{t}(1-\theta) \\
+c_{2 t+1} = r_{t+1}\frac{s_{t}}{p_{t}} + \delta_{t+1} 
+\end{align}
+となる．\footnote{$s_{t}$は消費財単位で測られているので，投資財として投資される量は$s_{t}/p_{t}$である．したがって，老年期に得られるリターンは$r_{t+1}\frac{s_{t}}{p_{t}}$となる．}ここで$q$は子育て費用，$\theta$は労働所得税率，$\delta_{t+1}$は$t$期に生まれた世代が老年期に受け取る年金額である．消費者の手取り賃金が正であるように，以下$1-\theta-qn>0$を仮定する．
+
+効用最大化から
+\begin{align}
+	c_{1t} &=\frac{1}{1+\beta} \left[ (1-\theta-qn)w_{t} + \frac{\delta_{t+1}}{\rho_{t+1}} \right] \label{eq:13}\\
+	s_{t} &= \frac{\beta}{1+\beta}(1-\theta-qn)w_{t}- \frac{1}{1+\beta}\frac{\delta_{t+1}}{\rho_{t+1}} \label{eq:14} \\
+	c_{2t+1} &= \frac{\beta \rho_{t+1}}{1+\beta}\left[(1-\theta-qn)w_{t}+ \frac{\delta_{t+1}}{\rho_{t+1}} \right] \label{eq:15}
+\end{align}
+と各期の消費関数および貯蓄関数が得られる．ただし，$\rho_{t+1} = r_{t+1}/p_{t}$で資本収益率を表す．
+
+\section{政府}
+政府は労働所得税を原資として年金制度を維持している．具体的には，集めた労働所得税を全て同時期の老年世代に均等に配分する賦課方式年金制度である．したがって毎期
+\begin{align}
+ \delta_{t} = n \theta w_{t} \label{eq:18}
+\end{align}
+が成立する．以下$\theta$の大きさを「年金制度の規模」と呼ぶ．
+\section{均衡}
+%ここで，GDP関数を以下のように定義する：
+%
+%$G(p_{I}, K, L) \equiv \max_{\left\{Y_{i}, K_{i}, L_{i} \right\}_{i=1}^{2}} \left\{Y_{1} + pY_{2} :F_{i}(K_{j},L_{j}) \ge Y_{j}, K \ge K_{C}+K_{I}, L \ge L_{C}+ L_{K} \right\}$, もしくは
+%
+%$G(p_{I}, K, L) \equiv \min_{\left\{ r,w \right\}} \left\{rK+wL :1 \le c_{1}(r, w), p_{I} \le c_{2}(r, w) \right\}$
+%
+%後者の制約から
+%\begin{align}
+% r=r(p_{I}), \, w=w(p_{I})
+%\end{align}
+%が得られる．これを目的関数に代入すると$G(p_{I}, K, L) = g(p_{I},k)L,  (ここでg(p_{I},k) \equiv r(p_{I})k + w(p_{I}), k \equiv K/L)$.
+
+投資財産業の市場均衡条件は
+\begin{align}
+ \tilde{x_{I}}(p_{t}, \, k_{t}) = \frac{s_{t}}{p_{t}}
+\end{align}
+と書けるが，~(\ref{eq:14})で貯蓄関数が求められているので，~(\ref{eq:17})を考慮して
+\begin{align}
+\tilde{x_{I}}(p_{t}, \, k_{t})=\frac{\beta}{1+\beta}(1-\theta-qn)\frac{w(p_{t})}{p_{t}} - \frac{1}{1+\beta}\frac{\delta_{t+1}}{r_{t+1}}
+%	\frac{\beta}{1+\beta}\frac{w_{t}}{p_{I}} [(1-\theta)-qn] - \frac{P_{t+1}}{1+\beta}\frac{1}{\rho_{t+1}} = I \left(p_{It}, k_{t} \right)
+\end{align}
+と書き直すことができる．さらに政府の予算制約式~(\ref{eq:18})から$\delta_{t+1} = n \theta w_{t+1}$を代入して
+\begin{align}
+ \tilde{x_{I}}(p_{t}, \, k_{t})  = \frac{\beta}{1+\beta}(1-\theta-qn)\frac{w(p_{t})}{p_{t}} - \frac{1}{1+\beta}\frac{ n \theta w(p_{t+1})}{r(p_{t+1})} \label{eq:5}
+\end{align}
+
+一方，資本蓄積方程式は資本減耗率を100$\%$と考えると
+\begin{align}
+ K_{t+1} =  f_{I}(k_{It}) L_{It}
+\end{align} 
+である．両辺を$L_{t}$で割り~(\ref{eq:12})を考慮すると，
+\begin{align}
+ k_{t+1} = \frac{1}{1+n}\tilde{x_{I}}(p_{t}, \, k_{t}) \label{eq:6}
+\end{align}
+が得られる．
+
+(\ref{eq:5})と~(\ref{eq:6})で$p_{t}$と$k_{t}$に関する自律的な差分方程式体系となっている．
+\section{安定性条件}
+
+
+
+定常状態では$k=k_{t} = k_{t+1}, \, p=p_{t} = p_{t+1}$が成立する．したがって，(\ref{eq:5})と(\ref{eq:6})から
+\begin{align}
+\tilde{x_{I}}(p, \, k)  &= \frac{\beta}{1+\beta}(1-\theta-qn)\frac{w(p)}{p} - \frac{1}{1+\beta}\frac{ n \theta w(p)}{r(p)} \label{eq:9} \\
+ k &= \frac{1}{1+n}\tilde{x_{I}}(p, \, k) \label{eq:10}
+\end{align}
+この２式から，定常の$p, \, k$が決定される．
+
+(\ref{eq:9})を変形すれば，以下のように投資財への超過需要関数, $D(p)$, を得る．
+\begin{align}
+ D(p)  \equiv \frac{\beta}{1+\beta}(1-\theta-qn)\frac{w(p)}{p} - \frac{1}{1+\beta}\frac{ n \theta w(p)}{r(p)} - \tilde{x_{I}}(p, \, k) \label{eq:16}
+\end{align}
+ワルラス安定条件は超過需要関数が$p$の減少関数であること．つまり，
+\begin{align}
+ \frac{dD}{dp} = \frac{\beta}{1+\beta}\frac{w^{\prime}p - w}{p}\left(1-\theta - qn \right) - \frac{n \theta}{1+\beta}\frac{w^{\prime}r - wr^{\prime}}{r^{2}} - \frac{\partial \tilde{x_{I}}}{\partial p} <0 \label{eq:22}
+\end{align}
+である．~(\ref{eq:7})から右辺第１項は負である．また~(\ref{eq:24})から第３項の符号はプラスである．，第２項の符号がマイナスであるが，年金制度の規模がそれほど大きくなければ($\theta$がそれほど大きくなければ)ワルラス安定条件は満たされる．以下では~(\ref{eq:22})の成立を仮定する．
+
+
+次に動学的安定性を確認する．(\ref{eq:5})から$p_{t+1} =\phi(p_{t}, \, k_{t})$と$p_{t+1}$が$p_{t}$と$k_{t}$の関数として表すことができる．ただし，$\phi_{p} \equiv \partial \phi/ \partial p_{t}$ $\phi_{k} \equiv \partial \phi/ \partial k_{t}$は以下のように求まる．
+(\ref{eq:5})を$p_{t}, \, k_{t}, \, p_{t+1}$について全微分すれば，
+\begin{align}
+  \tilde{x_{I}}_{p} dp_{t} +\tilde{x_{I}}_{k} dk_{t} &= \left[\frac{\beta}{1+\beta}(1-\theta-qn) \frac{w^{\prime}p -w}{p^{2}} \right]dp_{t}  \nonumber \\
+&- \left[\frac{n \theta}{1+\beta}\frac{  w^{\prime}r - wr^{\prime}}{r^{2} } 
+ \right]dp_{t+1} 
+\end{align}
+となる．\footnote{
+各係数は定常均衡で評価しているので，$ p=p_{t} = p_{t+1}$を使っています．$\phi_{k}, \phi_{p}$はあとで，定常均衡近傍での動学的安定性の議論に使うので，各係数は定常均衡で評価していますが，問題ないのですが，本文中でもう少し上手く説明するべきでした．
+}ここから，
+\begin{align}
+ \phi_{k} &=\tilde{x_{I}}_{k_{t}} \Delta_{1}^{-1}  \label{eq:19} \\
+\phi_{p} &= \left[\tilde{x_{I}}_{p_{t}} - \frac{\beta}{1+\beta}(1-\theta-qn) \frac{w^{\prime}p -w}{p^{2}}   \right] \Delta_{1}^{-1}  \label{eq:20}
+\end{align}
+と$\phi_{k}, \, \phi_{p}$が求まる．ただし，$\Delta_{1} \equiv \left[- \frac{n \theta}{1+\beta}\frac{  w^{\prime}r - wr^{\prime}}{r^{2}} \right] >0$．符号は~(\ref{eq:7})より確定．
+さらに~(\ref{eq:22})の成立を前提にすれば，定常近傍では$\phi_{p}>1$の成立が確認できる．
+
+
+$p_{t+1} =\phi(p_{t}, \, k_{t})$を考慮して，動学方程式体系を定常均衡の周りで線形化すると
+\begin{eqnarray}
+\left(
+\begin{array}{@{\,} c @{\,}}
+ p_{t+1} \\
+k_{t+1}
+\end{array} 
+\right) 
+=
+ \left(
+\begin{array}{@{\,} cc @{\,}}
+ \phi_{p} &  \phi_{k}  \\
+\frac{\tilde{x_{I}}_{p}}{1+n} & \frac{\tilde{x_{I}}_{k}}{1+n} 
+\end{array} 
+\right)
+\left(
+\begin{array}{@{\,} c @{\,}}
+dp_{t} \\
+dk_{t}
+\end{array} 
+\right)
+\label{linearization} 
+\end{eqnarray}
+となる．我々の動学方程式体系では$p$がjumpabable，$k$がunjumpableであるから，(\ref{linearization})式の係数行列の2つの固有値$\lambda_{1}, \, \lambda_{2}$（ただし，$\lambda_{1}>\lambda_{2}$）が，$\lambda_{1}>1$かつ$1>\lambda_{2}>0$となれば，定常均衡は鞍点安定となる．
+よく知られているように，$\lambda_{1}>1$かつ$1>\lambda_{2}>0$となる条件は，係数行列のトレースを$T$，ディターミナントを$D$と表したとき，$D>0$かつ$1-T+D<0$となることである．以下，この条件を確認する．
+%
+\begin{align}
+ D &= \phi_{p}\frac{\tilde{x_{I}}_{k}}{1+n}  -  \phi_{k}\frac{\tilde{x_{I}}_{p}}{1+n} \nonumber \\
+&=\left[\tilde{x_{I}}_{p_{t}} - \frac{\beta}{1+\beta}(1-\theta-qn) \frac{w^{\prime}p -w}{p^{2}}    \right] \Delta_{1}^{-1} \frac{\tilde{x_{I}}_{k}}{1+n} +\tilde{x_{I}}_{k_{t}} \Delta_{1}^{-1}\frac{\tilde{x_{I}}_{p}}{1+n} \nonumber \\
+&=\frac{\tilde{x_{I}}_{k}}{1+n} \Delta_{1}^{-1} \left[\tilde{x_{I}}_{p_{t}} - \frac{\beta}{1+\beta}(1-\theta-qn) \frac{w^{\prime}p -w}{p^{2}}   - \tilde{x_{I}}_{p_{t}}\right] \nonumber \\
+&=\frac{\tilde{x_{I}}_{k}}{1+n} \Delta_{1}^{-1} \left[- \frac{\beta}{1+\beta}(1-\theta-qn) \frac{w^{\prime}p -w}{p^{2}}   \right] >0\label{eq:28}
+\end{align}
+符号は~(\ref{eq:25})，$\Delta_{1}>0$，~(\ref{eq:7})により確定．
+%
+\begin{align}
+ 1 -T + D &= 1- \left( \phi_{p} + \frac{\tilde{x_{I}}_{k}}{1+n} \right)  + \phi_{p}\frac{\tilde{x_{I}}_{k}}{1+n}  -  \phi_{k}\frac{\tilde{x_{I}}_{p}}{1+n} \nonumber \\
+&=\left(1 -  \frac{\tilde{x_{I}}_{k}}{1+n} \right) \left(1 - \phi_{p} \right) -  \phi_{k}\frac{\tilde{x_{I}}_{p}}{1+n} \label{eq:21}
+\end{align}
+(\ref{eq:21})の符号は確定しないが，鞍点安定性を確保するため$1-T+D<0$を仮定する．%
+\footnote{ \label{fn:1}
+定常では
+\begin{align}
+ \tilde{x_{I}} = \frac{k -k_{C}}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p)) = (1+n) k
+\end{align}
+が成立．~(\ref{eq:12})から$\tilde{x_{I}}_{k}= \frac{1}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p))$ ．したがって定常近傍では，$ \tilde{x_{I}}_{k} >1+n$が成立．また$\phi_{p}>1, \phi_{k}>0, \tilde{x_{I}}_{p}>0$である．~(\ref{eq:21})の符号の不確定は，ワルラス安定条件や$\Delta_{1}$の場合と異なり，年金制度の有無とは関係なく２部門世代重複モデル特有の状況と思っています．例えばCremers
+}
+\section{比較静学}
+
+我々の目的は人口成長率の変化により年金の受取額がどのように変化するかを分析することである．年金受取額は$\delta = \theta w n$で$w=w(p)$であるので
+\begin{align}
+ \frac{d \delta}{dn} = \theta w(p) + \theta n \frac{d w(p)}{d n} =  \theta w(p) + \theta n \frac{\partial w(p)}{\partial p} \frac{\partial p}{\partial n} \label{eq:23}
+\end{align}
+とその効果を分解できる．\<\footnote{
+一般的に「人口が減っていくと年金制度が破綻する（年金受取額が減っていく）」というのは，右辺第１項が正であることに対応していると解釈できる．Fanti and Gori (2012)は１財モデルで第２項が負であることを指摘した．}以下では$dp/dn$を求めていく．
+
+
+(\ref{eq:9})と~(\ref{eq:10})を$p, \, k, \, n$に関して全微分すると
+\begin{align}
+ \tilde{x_{Ip}} dp + \tilde{x_{Ik}} dk &= \frac{\beta}{1+\beta} \frac{w^{\prime}p - w}{p}\left(1-\theta - qn \right) dp - \frac{\beta}{1+\beta}\frac{q w }{p} dn - \frac{\theta}{1+\beta}\frac{w}{r}dn \nonumber \\
+&- \frac{1}{1+\beta}\frac{n \theta (w^{\prime}r - wr^{\prime})}{r^{2}} dp \\
+(1+n) dk + k dn &=\tilde{x_{I}}_{p} dp + \tilde{x_{I}}_{k} dk
+\end{align}
+行列表示にして
+\begin{eqnarray*}
+ \left(
+\begin{array}{@{\,} cc @{\,}}
+ \tilde{x_{Ip}} -\frac{\beta}{1+\beta} \frac{w^{\prime}p - w}{p}\left(1-\theta - qn \right) + \frac{1}{1+\beta}\frac{n \theta (w^{\prime}r - wr^{\prime})}{r^{2}} &  \tilde{x_{I}}_{k}  \\
+\tilde{x_{I}}_{p} & \tilde{x_{I}}_{k} - (1+n) 
+\end{array} 
+\right)
+\left(
+\begin{array}{@{\,} c @{\,}}
+dp \\
+dk
+\end{array} 
+\right)
+\\ =
+\left(
+\begin{array}{@{\,} c @{\,}}
+ -\frac{\beta}{1+\beta}\frac{q w }{p} -\frac{1}{1+\beta}\frac{\theta w }{r} \\
+k
+\end{array} 
+\right) dn
+ \label{yakob} 
+\end{eqnarray*}
+左辺の係数行列の行列式を$\Delta_{2}$と表す．すると人口成長率$n$の変化が$p$に与える影響は
+\begin{align}
+ \frac{dp}{dn} = \Delta_{2}^{-1} \left[\left(-\frac{\beta}{1+\beta}\frac{qw}{p} - \frac{1}{1+\beta} \frac{\theta w}{r} \right)\left(\tilde{x_{I}}_{k} - (1+n)\right) - k \tilde{x_{I}}_k\right] \label{eq:27}
+\end{align}
+と計算される．ただし，
+\begin{align}
+ \Delta_{2} &= \left[\tilde{x_{Ip}} -\frac{\beta}{1+\beta} \frac{w^{\prime}p - w}{p}\left(1-\theta - qn \right) + \frac{1}{1+\beta}\frac{n \theta (w^{\prime}r - wr^{\prime})}{r^{2}}\right] \left[\tilde{x_{I}}_{k} - (1+n)  \right] - \tilde{x_{I}}_{k}\tilde{x_{I}}_{p} \nonumber \\
+&=  \left[ \phi_{p} \Delta_{1}+ \underbrace{ \frac{1}{1+\beta}\frac{n \theta (w^{\prime}r - wr^{\prime})}{r^{2}}}_{=-\Delta_{1}}\right] \left[\tilde{x_{I}}_{k} - (1+n)  \right] \nonumber \\
+&- \phi_{k} \Delta_{1} \tilde{x_{I}}_{p} \nonumber \\
+& = \Delta_{1} (1+n) \left[\left(1 - \frac{\tilde{x_{I}}_{k}}{1+n} \right)\left(1 - \phi_{p} \right) - \phi_{k} \frac{\tilde{x_{I}}_{p}}{1+n} \right]
+\end{align}
+１行目から２行目への展開は~(\ref{eq:19})と~(\ref{eq:20})を使っている．最終行第３項が~(\ref{eq:21})と等しいことから$\Delta_{2}<0$と符号が確定する．
+
+(\ref{eq:27})の右辺第２項は負である（脚注~\ref{fn:1}で$\tilde{x_{I}}_{k} - (1+n) >0$を示してある）．したがって，~(\ref{eq:27})の符号は正である．つまり，人口成長率の増加（低下）は，資本集約的な財の価格を上昇（低下）させる．
+
+したがって，$w^{\prime}<0$を考慮すると~(\ref{eq:23})の右辺の間接効果の部分（$\theta n \frac{\partial w(p)}{\partial p} \frac{\partial p}{\partial n}$）はFanti and Goriと同じく負となる．
+
+以上の結論を言い直すと，人口成長率の減少は直接効果としては，年金給付の原資である若年層が減るので年金給付額を減らす．一方，間接効果としては，人口減少により労働集約的な財の生産が減り資本集約的な財の生産が増え，その結果資本集約的な財の価格が下がり，利子率の低下，労働賃金の上昇が起こる．この労働賃金の上昇は，直接効果を和らげる．
+%\begin{align}
+%	g_{p_{I,t}}(p_{I,t}, k_{t})= \frac{s_{t}}{p_{I,t}}N_{t}   \label{eq:3}
+%\end{align}
+%これを貯蓄関数を用いて書き直すと
+%\begin{align}
+% 	g_{p_{I,t}}(p_{I,t}, k)=\frac{\beta}{1+\beta} \frac{w_{t}}{p_{I,t}}(1-\theta-qn) - \frac{1}{1+\beta}\frac{ n \theta w(p_{I,t+1})}{r(p_{I,t+1})} 
+%\end{align}
+%ゼロ利潤条件
+%\begin{align}
+% Y_{I} = r(p)K_{I} + w(p)L_{I} \Rightarrow \label{eq:4}
+%\end{align}
+%(\ref{eq:3})を~(\ref{eq:4})を使って整理すると，
+
+
+
+\section{Appendix}
+ストルパー・サミュエルソン関係などについて
+
+ここで，$a_{Kj} \equiv K_{j}/Y_{j}$ $a_{Lj} \ \equiv  L_{j}/Y_{j},$($j= I, \, C)$とすれば，完全雇用条件は
+\begin{align}
+ a_{KC}Y_{C} + a_{KI} Y_{I} =K \label{capital-equilibrium} \\
+a_{LC}Y_{C} + a_{LI} Y_{I} = L \label{labor-equilibrium}
+\end{align}
+と書ける．ここで$K, \, L$はそれぞれ$t$期の資本ストック，労働量である．
+(\ref{capital-equilibrium})と(\ref{labor-equilibrium})を全微分すれば
+
+
+\begin{align}
+	\lambda_{KC} \hat{Y}_{c} + \lambda_{KC} \hat{a}_{KC} +\lambda_{KI} \hat{Y}_{I} + \lambda_{K,I} \hat{a}_{KI} = \hat{K} \label{repsonseincapital-equilibrium}\\
+	\lambda_{LC} \hat{Y}_{c} + \lambda_{LC} \hat{a}_{LC} +\lambda_{L,I} \hat{Y}_{I} + \lambda_{LI} \hat{a}_{LI} = \hat{L} \label{repsonseinlabor-equilibrium}
+\end{align}
+が得られる．ここで$\hat{}$は変数の変化割合（例えば$\hat{Y}_{C} \equiv dY_{C}/Y_{C}$）を表し，$\lambda_{Ki} \equiv a_{Ki}Y_{i}/K, \lambda_{Li} \equiv a_{Li}Y_{j}/L, (i = C, I)$と定義されている．
+
+(\ref{eq:1})と~(\ref{eq:2})を全微分すれば
+\begin{align}
+	\gamma_{KC} \hat{r} + \gamma_{KC} \hat{a}_{KC} + \gamma_{LC} \hat{w} + \gamma_{LC} \hat{a}_{LC} = 0, \label{responseinprofitinC}\\
+	\gamma_{KI} \hat{r} + \gamma_{KI} \hat{a}_{KI} + \gamma_{LI} \hat{w} + \gamma_{LI} \hat{a}_{LI} = \hat{p}_{I}, \label{responseinprofitinI}
+\end{align}
+ただし，$\gamma_{KC} \equiv  r a_{KC}, \gamma_{LC} \equiv  w a_{LC}, \gamma_{KI} \equiv  r a_{KI} /p_{I}, \gamma_{LI} \equiv  w a_{LI}/p_{I}$である．
+生産費用最小化から
+\begin{align}
+	r d a_{Kj} + w da_{Lj} =0 \label{optimalresponse}
+\end{align}
+が得られるが，これを$\gamma_{ij}$の定義を使って変形すれば
+\begin{align}
+	\gamma_{Kj} \hat{a}_{Kj} + \gamma_{Lj} \hat{a}_{Lj} =0 \label{optimalresponse2}
+\end{align}
+となる．(\ref{responseinprofitinC})と(\ref{responseinprofitinI})を~(\ref{optimalresponse2})を使って整理すれば，
+\begin{align}
+	\gamma_{KC} \hat{r} + \gamma_{LC} \hat{w} = 0 \label{fromresponseinprofitinC}\\
+	\gamma_{KI} \hat{r} + \gamma_{LI} \hat{w} = \hat{p_{I}} \label{fromresponseinprofitinI}
+\end{align}
+が成立する．
+(\ref{fromresponseinprofitinC}), (\ref{fromresponseinprofitinI})
+から，いわゆるストルパー・サミュエルソンの定理が
+\begin{align}
+	\frac{\hat{w}}{\hat{p}_{I}} = \frac{- \gamma_{KC}}{\gamma_{KI} -\gamma_{KC}}, \label{ss1}\\
+	\frac{\hat{r}}{\hat{p}_{I}} = \frac{- \gamma_{LC}}{\gamma_{LI} -\gamma_{LC}}.  \label{ss2}
+\end{align}
+得られる．
+
+産業$j$の生産の弾力性を$\epsilon_{j}$と表す．フォーマルな定義は
+\begin{align}
+	\epsilon_{j} \equiv \frac{\hat{a}_{Kj} - \hat{a}_{Lj}}{\hat{w} - \hat{r}}
+\end{align}
+である．これに(\ref{optimalresponse})を代入して，(\ref{normalizeddistrbutioninc})と(\ref{normalizeddistrbutionini})を使って，整理すれば
+\begin{align}
+	\hat{a}_{Lj} = -\gamma_{Kj} \epsilon_{j} (\hat{w} - \hat{r}), \\
+	\hat{a}_{Kj} = -\gamma_{Lj} \epsilon_{j} (\hat{w} - \hat{r}),
+\end{align}
+が得られる．これらを(\ref{repsonseincapital-equilibrium})と(\ref{repsonseinlabor-equilibrium})に代入すれば
+\begin{align}
+	\lambda_{KC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = \hat{K} -(\hat{w} - \hat{r}) \delta_{K}  \label{repsonseincapital-equilibriumwithe}\\
+	\lambda_{LC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = \hat{L} +(\hat{w} - \hat{r}) \label{repsonseinlabor-equilibriumwithe}
+\end{align}
+となる．ただし，$\delta_{K} \equiv \lambda_{KC} \gamma_{LC} \epsilon_{C} + \lambda_{KI} \gamma_{LI} \epsilon_{I}, \, \delta_{L} \equiv \lambda_{LC} \gamma_{KC} \epsilon_{C} + \lambda_{LI} \gamma_{KI} \epsilon_{I}$．
+
+
+投資財生産の価格弾力性を$\eta_{Ip}$と名付ける．フォーマルな定義は
+\begin{align}
+	\eta_{Ip} \equiv \left( \frac{\hat{Y}_{I}}{\hat{p}_{I}} \right)_{\hat{k}=0}
+\end{align}
+である．$\hat{k}=0$と仮定し，(\ref{repsonseincapital-equilibriumwithe})および(\ref{repsonseinlabor-equilibriumwithe})は
+\begin{align}
+	\lambda_{KC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  =  -(\hat{w} - \hat{r}) \delta_{K}  \label{modifiedrepsonseincapital-equilibriumwithe}\\
+	\lambda_{LC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = (\hat{w} - \hat{r}) \delta_{L}\label{modifiedrepsonseinlabor-equilibriumwithe}
+\end{align}
+と書ける．(\ref{ss1})と(\ref{ss2})から
+\begin{align}
+	\hat{w} -\hat{r} =- \frac{\gamma_{KC}+\gamma_{LC}}{\triangle}
+\end{align}
+ここで$\triangle \equiv \gamma_{KI} -\gamma_{KC} = \gamma_{LC} - \gamma_{LI}$．これを使って，(\ref{modifiedrepsonseincapital-equilibriumwithe})と(\ref{modifiedrepsonseinlabor-equilibriumwithe})を書き直せば
+\begin{align}
+	\lambda_{KC} \hat{Y}_{C} + \lambda_{KI} \hat{Y}_{I} = \frac{\gamma_{KC}+\gamma_{LC}}{\triangle} \hat{p}_{I} \delta_{K} \\
+	\lambda_{LC} \hat{Y}_{C} + \lambda_{LI} \hat{Y}_{I} = - \frac{\gamma_{KC}+\gamma_{LC}}{\triangle} \hat{p}_{I} \delta_{L} \\
+\end{align}
+ここから
+\begin{align}
+	\hat{Y}_{I} = \frac{\hat{p}_{I}}{\Omega \triangle} \left(\lambda_{KC} \delta_{L} + \lambda_{LC} \delta_{K} \right)
+\end{align}
+ここで$\Omega \equiv \lambda_{LC} - \lambda_{KC}$．したがって，
+\begin{align}
+	\eta_{Ip} = \frac{1}{\Omega \triangle} \left(\lambda_{KC} \delta_{L} + \lambda_{LC} \delta_{K} \right) \label{eq:8}
+\end{align}
+
+$\lambda_{K,j} \equiv a_{K,j} Y_{j}/K, $ where $j=C, I$.とすれば
+\begin{align}
+ \lambda_{K,C} +\lambda_{K, \, I} =1 \label{normalizedcapitalequilibrium} \\
+\lambda_{L,C} +\lambda_{L, \, I} =1 \label{normalizedlaborequilibrium}\\
+\gamma_{K,C} +\gamma_{L, \, C} =1  \label{normalizeddistrbutioninc}\\
+\gamma_{K,I} +\gamma_{L, \, I} =1 \label{normalizeddistrbutionini}
+\end{align}
+
+
+\end{document}
