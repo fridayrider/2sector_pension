@@ -322,6 +322,21 @@ k
 
 
 \section{Appendix}
+
+
+$\partial x_{I}/ \partial p$の導出
+\begin{align}
+ \frac{\partial x_{I}}{\partial p} &= \frac{-k_{c}^{\prime}(k_{I}-k_{C})- (k-k_{C})(k_{I}^{\prime} -k_{C}^{\prime})}{(k_{I}-k_{C})}^{2}f_{I} + \frac{k - k_{C}}{K_{I} - k_{C}}f_{I}^{\prime}k_{I}^{\prime} \\
+&= \frac{-k_{c}^{\prime}(k_{I}-k_{C})- (k-k_{C})(k_{I}^{\prime} -k_{C}^{\prime})}{(k_{I}-k_{C})}^{2}f_{I} + l_{I}f_{I}^{\prime}k_{I}^{\prime} \\
+&=\frac{-k_{c}^{\prime}(k_{I}-k_{C} -k +k_{C})- (k-k_{C})k_{I}^{\prime} }{(k_{I}-k_{C})}^{2}f_{I} + l_{I}f_{I}^{\prime}k_{I}^{\prime} \\
+&=\frac{-k_{c}^{\prime}(k_{I} - k )- (k-k_{C})k_{I}^{\prime} }{(k_{I}-k_{C})}^{2}f_{I} + l_{I}f_{I}^{\prime}k_{I}^{\prime} \\
+&= (k_{I} - k_{C})^{-2} \left\{\left[-k_{c}^{\prime}(k_{I} - k )- (k-k_{C})k_{I}^{\prime} \right] f_{I} + (k_{I} - k_{C})^{2} l_{I}f_{I}^{\prime}k_{I}^{\prime} \right\}  \\
+&= (k_{I} - k_{C})^{-2} \left\{ \left[-k_{c}^{\prime} l_{C} (k_{I} - k_{C} )- (k-k_{C})k_{I}^{\prime} \right] f_{I} + (k_{I} - k_{C})^{2} l_{I}f_{I}^{\prime}k_{I}^{\prime} \right\} \\
+&= (k_{I} - k_{C})^{-2} \left\{ \left[-\frac{f_{I}l_{C}}{f_{C}^{\prime \prime}}- (k-k_{C})k_{I}^{\prime} \right] f_{I} + (k_{I} - k_{C}) l_{I}f_{I}^{\prime} \frac{f_{C}}{p^{2}f_{I}^{\prime \prime}} \right\} \\
+&= (k_{I} - k_{C})^{-2} \left[ -\frac{f_{I}^{2} l_{C}}{f_{C}^{\prime \prime}}- l_{I}(k_{I}-k_{C})k_{I}^{\prime}  f_{I} + (k_{I} - k_{C}) l_{I}f_{I}^{\prime} \frac{f_{C}}{p^{2}f_{I}^{\prime \prime}} \right] \\
+&= (k_{I} - k_{C})^{-2} \left[ -\frac{f_{I}^{2} l_{C}}{f_{C}^{\prime \prime}}- l_{I} \frac{f_{C}f_{I} }{ p^{2}f_{I}^{\prime \prime}}+ (k_{I} - k_{C}) l_{I}f_{I}^{\prime} \frac{f_{C}}{p^{2}f_{I}^{\prime \prime}} \right] \\
+&= (k_{I} - k_{C})^{-2} \left[ -\frac{f_{I}^{2} l_{C}}{f_{C}^{\prime \prime}}- \frac{ l_{I} f_{C} }{ p^{2}f_{I}^{\prime \prime}}\left[ f_{I} - k_{I}f_{I}^{\prime}  + k_{C}f_{I}^{\prime}  \right] \right]
+\end{align}
 ストルパー・サミュエルソン関係などについて
 
 ここで，$a_{Kj} \equiv K_{j}/Y_{j}$ $a_{Lj} \ \equiv  L_{j}/Y_{j},$($j= I, \, C)$とすれば，完全雇用条件は
