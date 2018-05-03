@@ -44,23 +44,22 @@ $C$($I$)は消費財（投資財）部門を示すindexで，$k_{it}, \, L_{it},
 \end{align}
 と表される．消費財を基準財とし$p$を投資財価格とすると，利潤最大化問題の一階条件から
 \begin{align}
- w &= f_{C} - k_{C} f_{C}^{\prime} = p \left[f_{I} - k_{I} f_{I}^{\prime} \right] \\
-r &= f_{C}^{\prime} =  p f_{I}^{\prime}
+ w &= f_{C} - k_{C} f_{C}^{\prime} = p \left[f_{I} - k_{I} f_{I}^{\prime} \right]  \label{eq:8}\\
+r &= f_{C}^{\prime} =  p f_{I}^{\prime} \label{eq:26}
 \end{align}
-$w$，$r$はそれぞれ消費財単位の賃金率と利子率である．ここで，$\omega \equiv w/r$と定義すれば標準的な２部門モデルの特性として
+$w$，$r$はそれぞれ消費財単位の賃金率と利子率である．ここで，$\omega \equiv w/r$と定義すれば標準的な２部門モデルの特性として~(\ref{eq:8})と~(\ref{eq:26})から
 \begin{align}
- k_{i} =\tilde{k_{i}}(\omega), \, r =r(\omega), \, w = w(\omega) \label{eq:17}
+ k_{C} =\tilde{k_{C}}(p),  \, \tilde{k_{C}}^{\prime} \equiv \frac{d k_{C}}{dp} = \frac{f_{I}}{f_{C}^{\prime \prime} (k_{I} -k_{C})} \\
+ k_{I} =\tilde{k_{I}}(p),  \, \tilde{k_{I}}^{\prime} \equiv \frac{d k_{I}}{dp} = \frac{f_{C}}{p^{2}f_{I}^{\prime \prime} (k_{I} -k_{C})} \\
+ r =r(\omega), \, r^{\prime} \equiv \frac{dr}{dp} = \frac{f_{I}}{k_{I} -k_{C}} \\
+ w = w(\omega) \, w^{\prime} \equiv  \frac{dw}{dp} = \frac{ -k_{C}  f_{I}} {k_{I} -k_{C}}\label{eq:17}
 \end{align}
 という関係が得られる．以下では，$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$，つまり投資財産業が資本集約的であると仮定する．\footnote{以下で定式化しますが，効用関数は対数線形効用関数なので，年金制度のない単純な２部門モデルであれば，貯蓄関数は利子率に依存せず，一元の動学方程式で記述されます．このような単純な設定でも，$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$だけでは安定性は保証されないようです（Galor (1992)の6章特にfootnote26を参照）．}
-さらに，$\omega$が$p$の関数であることも示せるので，
+したがって，ストルパー＝サミュエルソン関係
 \begin{align}
-  k_{i} =\tilde{k_{i}}(\omega(p)), \, r =r(p), \, w = w(p)
+w^\prime <0, r^{\prime}>0 \label{eq:7}
 \end{align}
-と表現する．投資財産業が資本集約的であるという仮定からストルパー＝サミュエルソン関係
-\begin{align}
- dw/dp <0, dr/dp>0 \label{eq:7}
-\end{align}
-が得られる．\footnote{簡単に証明を書く必要があるかも知れませんが，よく知られている結果なので省略します．}また，各産業の労働者（若年者）１人当たり生産は
+が得られる．また，各産業の労働者（若年者）１人当たり生産は
 \begin{align}
  x_{C} = \tilde{ x_{C}}(p, k) = l_{c}f_{C}(k_{C}) = \frac{k-k_{I}}{k_{C}-k_{I}} f_{C}(\tilde{k_{C}}(\omega(p))  \label{eq:11}\\
 x_{I} = \tilde{ x_{I}}(p, k) = l_{I}f_{I}(k_{I}) = \frac{k -k_{C}}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p)) \label{eq:12}
