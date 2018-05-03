@@ -7,7 +7,7 @@
 \begin{document}
 　生産側は２部門生産２生産要素モデルを考える．消費者側は２期間世代重複モデルを考え，単純化のため効用関数は対数線形型である．
 
-以下の構成は，１章企業行動，２章家計行動，３章政府行動，４章均衡条件，５章安定性条件，６章比較静学である\footnote{AppnedixはCremersを参照するに行った計算を自分のために残したものなの参照しないでください．}
+以下の構成は，１章企業行動，２章家計行動，３章政府行動，４章均衡条件，５章安定性条件，６章比較静学である
 
 得られた主な結果は
 \begin{itemize}
@@ -70,7 +70,7 @@ x_{I} = \tilde{ x_{I}}(p, k) = l_{I}f_{I}(k_{I}) = \frac{k -k_{C}}{k_{I}-k_{C}} 
   \partial \tilde{x_{I}}/ \partial p &>0 \label{eq:24}\\
 \partial \tilde{x_{I}}/ \partial k &= \frac{1}{k_{I}-k_{C}} f_{I}(\tilde{k_{I}}(\omega(p))>0 \label{eq:25}
 \end{align}
-という関係が求められる．\footnote{~(\ref{eq:24})は~(\ref{eq:8})によって示されているのですが，Appendix以降はCremersを参照する前に計算したものなので，記号表記が全く異なっています．後できちんと統一する予定ですが，直観的にも納得しやすい「ある財の価格が上昇したらその財の生産が増えるという」という内容です．$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$なので~(\ref{eq:25})は~(\ref{eq:12})から求められます．}
+という関係が求められる．\footnote{~(\ref{eq:24})はAppendixを参照．$\tilde{k_{I}}(\omega) > \tilde{k_{C}}(\omega)$なので~(\ref{eq:25})は~(\ref{eq:12})から求められます．}
 
 
 
@@ -324,7 +324,7 @@ k
 \section{Appendix}
 
 
-$\partial x_{I}/ \partial p$の導出
+(\ref{eq:7})の導出
 \begin{align}
  \frac{\partial x_{I}}{\partial p} &= \frac{-k_{c}^{\prime}(k_{I}-k_{C})- (k-k_{C})(k_{I}^{\prime} -k_{C}^{\prime})}{(k_{I}-k_{C})}^{2}f_{I} + \frac{k - k_{C}}{K_{I} - k_{C}}f_{I}^{\prime}k_{I}^{\prime} \\
 &= \frac{-k_{c}^{\prime}(k_{I}-k_{C})- (k-k_{C})(k_{I}^{\prime} -k_{C}^{\prime})}{(k_{I}-k_{C})}^{2}f_{I} + l_{I}f_{I}^{\prime}k_{I}^{\prime} \\
@@ -337,102 +337,5 @@ $\partial x_{I}/ \partial p$の導出
 &= (k_{I} - k_{C})^{-2} \left[ -\frac{f_{I}^{2} l_{C}}{f_{C}^{\prime \prime}}- l_{I} \frac{f_{C}f_{I} }{ p^{2}f_{I}^{\prime \prime}}+ (k_{I} - k_{C}) l_{I}f_{I}^{\prime} \frac{f_{C}}{p^{2}f_{I}^{\prime \prime}} \right] \\
 &= (k_{I} - k_{C})^{-2} \left[ -\frac{f_{I}^{2} l_{C}}{f_{C}^{\prime \prime}}- \frac{ l_{I} f_{C} }{ p^{2}f_{I}^{\prime \prime}}\left[ f_{I} - k_{I}f_{I}^{\prime}  + k_{C}f_{I}^{\prime}  \right] \right]
 \end{align}
-ストルパー・サミュエルソン関係などについて
-
-ここで，$a_{Kj} \equiv K_{j}/Y_{j}$ $a_{Lj} \ \equiv  L_{j}/Y_{j},$($j= I, \, C)$とすれば，完全雇用条件は
-\begin{align}
- a_{KC}Y_{C} + a_{KI} Y_{I} =K \label{capital-equilibrium} \\
-a_{LC}Y_{C} + a_{LI} Y_{I} = L \label{labor-equilibrium}
-\end{align}
-と書ける．ここで$K, \, L$はそれぞれ$t$期の資本ストック，労働量である．
-(\ref{capital-equilibrium})と(\ref{labor-equilibrium})を全微分すれば
-
-
-\begin{align}
-	\lambda_{KC} \hat{Y}_{c} + \lambda_{KC} \hat{a}_{KC} +\lambda_{KI} \hat{Y}_{I} + \lambda_{K,I} \hat{a}_{KI} = \hat{K} \label{repsonseincapital-equilibrium}\\
-	\lambda_{LC} \hat{Y}_{c} + \lambda_{LC} \hat{a}_{LC} +\lambda_{L,I} \hat{Y}_{I} + \lambda_{LI} \hat{a}_{LI} = \hat{L} \label{repsonseinlabor-equilibrium}
-\end{align}
-が得られる．ここで$\hat{}$は変数の変化割合（例えば$\hat{Y}_{C} \equiv dY_{C}/Y_{C}$）を表し，$\lambda_{Ki} \equiv a_{Ki}Y_{i}/K, \lambda_{Li} \equiv a_{Li}Y_{j}/L, (i = C, I)$と定義されている．
-
-(\ref{eq:1})と~(\ref{eq:2})を全微分すれば
-\begin{align}
-	\gamma_{KC} \hat{r} + \gamma_{KC} \hat{a}_{KC} + \gamma_{LC} \hat{w} + \gamma_{LC} \hat{a}_{LC} = 0, \label{responseinprofitinC}\\
-	\gamma_{KI} \hat{r} + \gamma_{KI} \hat{a}_{KI} + \gamma_{LI} \hat{w} + \gamma_{LI} \hat{a}_{LI} = \hat{p}_{I}, \label{responseinprofitinI}
-\end{align}
-ただし，$\gamma_{KC} \equiv  r a_{KC}, \gamma_{LC} \equiv  w a_{LC}, \gamma_{KI} \equiv  r a_{KI} /p_{I}, \gamma_{LI} \equiv  w a_{LI}/p_{I}$である．
-生産費用最小化から
-\begin{align}
-	r d a_{Kj} + w da_{Lj} =0 \label{optimalresponse}
-\end{align}
-が得られるが，これを$\gamma_{ij}$の定義を使って変形すれば
-\begin{align}
-	\gamma_{Kj} \hat{a}_{Kj} + \gamma_{Lj} \hat{a}_{Lj} =0 \label{optimalresponse2}
-\end{align}
-となる．(\ref{responseinprofitinC})と(\ref{responseinprofitinI})を~(\ref{optimalresponse2})を使って整理すれば，
-\begin{align}
-	\gamma_{KC} \hat{r} + \gamma_{LC} \hat{w} = 0 \label{fromresponseinprofitinC}\\
-	\gamma_{KI} \hat{r} + \gamma_{LI} \hat{w} = \hat{p_{I}} \label{fromresponseinprofitinI}
-\end{align}
-が成立する．
-(\ref{fromresponseinprofitinC}), (\ref{fromresponseinprofitinI})
-から，いわゆるストルパー・サミュエルソンの定理が
-\begin{align}
-	\frac{\hat{w}}{\hat{p}_{I}} = \frac{- \gamma_{KC}}{\gamma_{KI} -\gamma_{KC}}, \label{ss1}\\
-	\frac{\hat{r}}{\hat{p}_{I}} = \frac{- \gamma_{LC}}{\gamma_{LI} -\gamma_{LC}}.  \label{ss2}
-\end{align}
-得られる．
-
-産業$j$の生産の弾力性を$\epsilon_{j}$と表す．フォーマルな定義は
-\begin{align}
-	\epsilon_{j} \equiv \frac{\hat{a}_{Kj} - \hat{a}_{Lj}}{\hat{w} - \hat{r}}
-\end{align}
-である．これに(\ref{optimalresponse})を代入して，(\ref{normalizeddistrbutioninc})と(\ref{normalizeddistrbutionini})を使って，整理すれば
-\begin{align}
-	\hat{a}_{Lj} = -\gamma_{Kj} \epsilon_{j} (\hat{w} - \hat{r}), \\
-	\hat{a}_{Kj} = -\gamma_{Lj} \epsilon_{j} (\hat{w} - \hat{r}),
-\end{align}
-が得られる．これらを(\ref{repsonseincapital-equilibrium})と(\ref{repsonseinlabor-equilibrium})に代入すれば
-\begin{align}
-	\lambda_{KC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = \hat{K} -(\hat{w} - \hat{r}) \delta_{K}  \label{repsonseincapital-equilibriumwithe}\\
-	\lambda_{LC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = \hat{L} +(\hat{w} - \hat{r}) \label{repsonseinlabor-equilibriumwithe}
-\end{align}
-となる．ただし，$\delta_{K} \equiv \lambda_{KC} \gamma_{LC} \epsilon_{C} + \lambda_{KI} \gamma_{LI} \epsilon_{I}, \, \delta_{L} \equiv \lambda_{LC} \gamma_{KC} \epsilon_{C} + \lambda_{LI} \gamma_{KI} \epsilon_{I}$．
-
-
-投資財生産の価格弾力性を$\eta_{Ip}$と名付ける．フォーマルな定義は
-\begin{align}
-	\eta_{Ip} \equiv \left( \frac{\hat{Y}_{I}}{\hat{p}_{I}} \right)_{\hat{k}=0}
-\end{align}
-である．$\hat{k}=0$と仮定し，(\ref{repsonseincapital-equilibriumwithe})および(\ref{repsonseinlabor-equilibriumwithe})は
-\begin{align}
-	\lambda_{KC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  =  -(\hat{w} - \hat{r}) \delta_{K}  \label{modifiedrepsonseincapital-equilibriumwithe}\\
-	\lambda_{LC} \hat{Y_{C}}  +\lambda_{KI} \hat{Y_{I}}  = (\hat{w} - \hat{r}) \delta_{L}\label{modifiedrepsonseinlabor-equilibriumwithe}
-\end{align}
-と書ける．(\ref{ss1})と(\ref{ss2})から
-\begin{align}
-	\hat{w} -\hat{r} =- \frac{\gamma_{KC}+\gamma_{LC}}{\triangle}
-\end{align}
-ここで$\triangle \equiv \gamma_{KI} -\gamma_{KC} = \gamma_{LC} - \gamma_{LI}$．これを使って，(\ref{modifiedrepsonseincapital-equilibriumwithe})と(\ref{modifiedrepsonseinlabor-equilibriumwithe})を書き直せば
-\begin{align}
-	\lambda_{KC} \hat{Y}_{C} + \lambda_{KI} \hat{Y}_{I} = \frac{\gamma_{KC}+\gamma_{LC}}{\triangle} \hat{p}_{I} \delta_{K} \\
-	\lambda_{LC} \hat{Y}_{C} + \lambda_{LI} \hat{Y}_{I} = - \frac{\gamma_{KC}+\gamma_{LC}}{\triangle} \hat{p}_{I} \delta_{L} \\
-\end{align}
-ここから
-\begin{align}
-	\hat{Y}_{I} = \frac{\hat{p}_{I}}{\Omega \triangle} \left(\lambda_{KC} \delta_{L} + \lambda_{LC} \delta_{K} \right)
-\end{align}
-ここで$\Omega \equiv \lambda_{LC} - \lambda_{KC}$．したがって，
-\begin{align}
-	\eta_{Ip} = \frac{1}{\Omega \triangle} \left(\lambda_{KC} \delta_{L} + \lambda_{LC} \delta_{K} \right) \label{eq:8}
-\end{align}
-
-$\lambda_{K,j} \equiv a_{K,j} Y_{j}/K, $ where $j=C, I$.とすれば
-\begin{align}
- \lambda_{K,C} +\lambda_{K, \, I} =1 \label{normalizedcapitalequilibrium} \\
-\lambda_{L,C} +\lambda_{L, \, I} =1 \label{normalizedlaborequilibrium}\\
-\gamma_{K,C} +\gamma_{L, \, C} =1  \label{normalizeddistrbutioninc}\\
-\gamma_{K,I} +\gamma_{L, \, I} =1 \label{normalizeddistrbutionini}
-\end{align}
-
 
 \end{document}
